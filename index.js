@@ -39,7 +39,7 @@ router
   .on({
     "/": () => render(state.Home),
     ":page": (params) => {
-      let page = capitalize(params.page);
+      let page = capitalize(params.data.page);
       render(state[page]);
     },
   })
