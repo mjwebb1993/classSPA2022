@@ -1,3 +1,17 @@
+header > h1 {
+  margin: 5px;
+  color: blueviolet;
+}
+
+#bio > h2 {
+  color: red;
+}
+
+#order > h2 {
+  color: green;
+}
+
+
 #jumbotron {
   background: url(assets/img/photo-1528334713982-2d1fe11a157a.jpg) center center no-repeat;  background-size: cover;
   display: flex;

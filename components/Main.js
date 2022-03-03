@@ -1,6 +1,7 @@
+/* eslint-disable prettier/prettier */
 import html from "html-literal";
 import * as views from "./views";
 
-export default () => html`
-  ${views["Home"]()} ${views["Bio"]()} ${views["Pizza"]()} ${views["Order"]()}
+export default (st) => html`
+  ${views[st.view](st)}
 `;
