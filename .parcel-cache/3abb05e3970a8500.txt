@@ -1,6 +1,6 @@
 7058
 106C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\@parcel\runtime-js\src\helpers\node\js-loader.js121436361000000000 0
-54C:\Users\jbest\code\SavvyCoders\classSPA2022\style.css132905739744861282 0
+54C:\Users\jbest\code\SavvyCoders\classSPA2022\style.css132907516184213462 0
 104C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\postcss-merge-longhand\src\lib\isCustomProp.js121436361000000000 0
 116C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\caniuse-lite\data\features\justify-content-space-evenly.js121436361000000000 0
 69C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\cross-spawn132905701056511072 1
@@ -102,7 +102,7 @@
 93C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\stylehacks\src\plugins\important.js121436361000000000 0
 106C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mtest.c121436361000000000 0
 111C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\caniuse-lite\data\features\date-tolocaledatestring.js121436361000000000 0
-49C:\Users\jbest\code\SavvyCoders\classSPA2022\dist132907486457177018 1
+49C:\Users\jbest\code\SavvyCoders\classSPA2022\dist132907516186483467 1
 117C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\lmdb\dependencies\lmdb-data-v1\libraries\liblmdb\mdb_stat.1121436361000000000 0
 93C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\eslint\lib\rules\space-in-parens.js121436361000000000 0
 106C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\css-declaration-sorter\orders\concentric-css.mjs121436361000000000 0
@@ -133,7 +133,7 @@
 75C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\msgpackr\index.js121436361000000000 0
 85C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\text-table\test\dotalign.js130127405880000000 0
 92C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\@humanwhocodes\object-schema\tests132905701020045188 1
-53C:\Users\jbest\code\SavvyCoders\classSPA2022\index.js132907484725726378 0
+53C:\Users\jbest\code\SavvyCoders\classSPA2022\index.js132907517359213917 0
 70C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\lodash\at.js121436361000000000 0
 113C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\@parcel\core\test\fixtures\targets-default-distdir-none132905720719754382 1
 114C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\@swc\helpers\src\_class_static_private_field_spec_set.js132732112500000000 0
@@ -270,7 +270,7 @@
 85C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\postcss-merge-rules\src\lib132905720678514364 1
 92C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\eslint\lib\rules\no-spaced-func.js121436361000000000 0
 77C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\lodash\fp\method.js121436361000000000 0
-67C:\Users\jbest\code\SavvyCoders\classSPA2022\dist\index.3d214d75.js132907486451657021 0
+67C:\Users\jbest\code\SavvyCoders\classSPA2022\dist\index.3d214d75.js132907513415212866 0
 64C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\wrappy132905701056481083 1
 118C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\@parcel\transformer-svg\node_modules\posthtml-parser\license121436361000000000 0
 87C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\posthtml-render\dist\index.js121436361000000000 0
@@ -483,7 +483,7 @@
 97C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\@parcel\utils\test\prettifyTime.test.js121436361000000000 0
 99C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\caniuse-lite\data\features\font-smooth.js121436361000000000 0
 80C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\lodash\fp\stubFalse.js121436361000000000 0
-68C:\Users\jbest\code\SavvyCoders\classSPA2022\dist\index.3a01df49.css132907486451047031 0
+68C:\Users\jbest\code\SavvyCoders\classSPA2022\dist\index.3a01df49.css132907516186433472 0
 89C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\caniuse-lite\data\regions\SO.js121436361000000000 0
 76C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\lodash\isString.js121436361000000000 0
 78C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\escape-string-regexp132905701052241081 1
@@ -897,7 +897,7 @@
 75C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\eslint-scope\dist132905701015775185 1
 80C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\parent-module\index.js121436361000000000 0
 80C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\postcss-merge-longhand132905720792384394 1
-65C:\Users\jbest\code\SavvyCoders\classSPA2022\components\Header.js132907436010736648 0
+65C:\Users\jbest\code\SavvyCoders\classSPA2022\components\Header.js132907513412462872 0
 100C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\postcss-normalize-display-values\README.md121436361000000000 0
 80C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\ajv\lib\dot\_limit.jst121436361000000000 0
 82C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\postcss-minify-gradients132905720793334372 1
@@ -1329,7 +1329,7 @@
 75C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\lodash\fp\prop.js121436361000000000 0
 94C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\@parcel\watcher\prebuilds\darwin-x64132905720706044400 1
 83C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\stylehacks\src\isMixin.js121436361000000000 0
-71C:\Users\jbest\code\SavvyCoders\classSPA2022\dist\index.3d214d75.js.map132907486451747028 0
+71C:\Users\jbest\code\SavvyCoders\classSPA2022\dist\index.3d214d75.js.map132907513415282869 0
 81C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\@parcel\fs\src\index.js121436361000000000 0
 76C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\lodash\_overArg.js121436361000000000 0
 89C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\@parcel\core\src\BundleGraph.js121436361000000000 0
@@ -2428,7 +2428,7 @@
 100C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\postcss-reduce-initial\data\toInitial.json121436361000000000 0
 76C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\picocolors\LICENSE121436361000000000 0
 93C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\postcss-ordered-values\package.json132905720792334389 0
-72C:\Users\jbest\code\SavvyCoders\classSPA2022\dist\index.3a01df49.css.map132907486451157023 0
+72C:\Users\jbest\code\SavvyCoders\classSPA2022\dist\index.3a01df49.css.map132907516186433472 0
 90C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\postcss-ordered-values\README.md121436361000000000 0
 93C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\postcss-ordered-values\src\index.js121436361000000000 0
 125C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\@parcel\transformer-html\node_modules\posthtml-parser\dist\index.js121436361000000000 0
@@ -6887,7 +6887,7 @@
 123C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\@parcel\core\test\fixtures\library-custom-scopehoist\package.json121436361000000000 0
 121C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\@parcel\core\test\fixtures\invalid-source-not-file\package.json121436361000000000 0
 112C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\@parcel\core\test\fixtures\invalid-source-not-file\src132905720706004387 1
-69C:\Users\jbest\code\SavvyCoders\classSPA2022\components\views\Home.js132905777946988974 0
+69C:\Users\jbest\code\SavvyCoders\classSPA2022\components\views\Home.js132907509730905969 0
 120C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\@parcel\core\test\fixtures\invalid-source-missing\package.json121436361000000000 0
 113C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\@parcel\core\test\fixtures\invalid-engines\package.json121436361000000000 0
 112C:\Users\jbest\code\SavvyCoders\classSPA2022\node_modules\@parcel\core\test\fixtures\custom-targets\package.json121436361000000000 0
@@ -7054,6 +7054,6 @@
 67C:\Users\jbest\code\SavvyCoders\classSPA2022\dist\order.c36f364e.js132905747844188369 0
 60C:\Users\jbest\code\SavvyCoders\classSPA2022\dist\order.html132905747844008380 0
 60C:\Users\jbest\code\SavvyCoders\classSPA2022\dist\pizza.html132905747844008380 0
-65C:\Users\jbest\code\SavvyCoders\classSPA2022\components\Footer.js132905775444907055 0
+65C:\Users\jbest\code\SavvyCoders\classSPA2022\components\Footer.js132907512563310402 0
 61C:\Users\jbest\code\SavvyCoders\classSPA2022\components\views132905787301710678 1
 70C:\Users\jbest\code\SavvyCoders\classSPA2022\components\views\Order.js132905786268618334 0
