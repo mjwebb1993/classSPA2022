@@ -3,6 +3,8 @@ import * as state from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
 
+import axios from "axios";
+
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -43,7 +45,7 @@ router.hooks({
   before: (done, params) => {
     const page =
       params && params.hasOwnProperty("page")
-        ? capitalize(params.page)
+        ? capitalize(params.data.page)
         : "Home";
 
     if (page === "Home") {
@@ -60,6 +62,18 @@ router.hooks({
           done();
         })
         .catch((err) => console.log(err));
+    }
+
+    if (page === "Pizza") {
+      axios
+        .get(`${process.env.PIZZA_PLACE_API_URL}`)
+        .then((response) => {
+          state.Pizza.pizzas = response.data;
+          done();
+        })
+        .catch((error) => {
+          console.log("It puked", error);
+        });
     }
   },
 });
