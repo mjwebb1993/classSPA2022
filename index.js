@@ -68,6 +68,7 @@ router.hooks({
       axios
         .get(`${process.env.PIZZA_PLACE_API_URL}`)
         .then((response) => {
+          console.log(response.dat);
           state.Pizza.pizzas = response.data;
           done();
         })
