@@ -45,8 +45,9 @@ router.hooks({
   before: (done, params) => {
     const page =
       params && params.hasOwnProperty("page")
-        ? capitalize(params.data.page)
+        ? capitalize(params.page)
         : "Home";
+    console.log(page);
 
     if (page === "Home") {
       axios
