@@ -3,6 +3,9 @@ import * as state from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
 
+import dotenv from "dotenv";
+dotenv.config();
+
 const router = new Navigo("/");
 
 function render(st) {
@@ -34,6 +37,32 @@ function addEventListeners(st) {
       document.querySelector("nav > ul").classList.toggle("hidden--mobile")
     );
 }
+
+//  ADD ROUTER HOOKS HERE ...
+router.hooks({
+  before: (done, params) => {
+    const page =
+      params && params.hasOwnProperty("page")
+        ? capitalize(params.page)
+        : "Home";
+
+    if (page === "Home") {
+      axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?q=st.%20louis&appid=${process.env.OPEN_WEATHER_MAP_API_KEY}`
+        )
+        .then((response) => {
+          state.Home.weather = {};
+          state.Home.weather.city = response.data.name;
+          state.Home.weather.temp = response.data.main.temp;
+          state.Home.weather.feelsLike = response.data.main.feels_like;
+          state.Home.weather.description = response.data.weather[0].main;
+          done();
+        })
+        .catch((err) => console.log(err));
+    }
+  },
+});
 
 router
   .on({
