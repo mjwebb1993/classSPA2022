@@ -25,12 +25,15 @@ function render(st) {
 
 function addEventListeners(st) {
   // add event listeners to Nav items for navigation
-  document.querySelectorAll("nav a").forEach((navLink) =>
-    navLink.addEventListener("click", (event) => {
-      event.preventDefault();
-      render(state[event.target.title]);
-    })
-  );
+  /**
+   * This event listener conflicts with the "data-navigo" attribute in Nav.js component
+   */
+  // document.querySelectorAll("nav a").forEach((navLink) =>
+  //   navLink.addEventListener("click", (event) => {
+  //     event.preventDefault();
+  //     render(state[event.target.title]);
+  //   })
+  // );
 
   // add menu toggle to bars icon in nav bar
   document
@@ -43,11 +46,7 @@ function addEventListeners(st) {
 //  ADD ROUTER HOOKS HERE ...
 router.hooks({
   before: (done, params) => {
-    const page =
-      params && params.hasOwnProperty("page")
-        ? capitalize(params.page)
-        : "Home";
-    console.log(page);
+    const page = params && params.data && params.data.page ? capitalize(params.data.page) : "Home";
 
     if (page === "Home") {
       axios
@@ -63,21 +62,21 @@ router.hooks({
           done();
         })
         .catch((err) => console.log(err));
-    }
-
-    if (page === "Pizza") {
+    } else if (page === "Pizza") {
       axios
         .get(`${process.env.PIZZA_PLACE_API_URL}`)
         .then((response) => {
-          console.log(response.dat);
+          console.log(response.data);
           state.Pizza.pizzas = response.data;
           done();
         })
         .catch((error) => {
           console.log("It puked", error);
         });
+    } else {
+      done();
     }
-  },
+  }
 });
 
 router
