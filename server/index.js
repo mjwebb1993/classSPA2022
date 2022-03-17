@@ -1,9 +1,29 @@
 // 'Import' the Express module instead of http
 const express = require("express");
+// Require mongoose for accessing mongoDB
+const mongoose = require("mongoose");
+// Require dotenv to load environment variables
+const dotenv = require("dotenv");
+
+// Require models
+const pizzas = require("./routers/pizzas");
+
+
+dotenv.config();
+
 // Initialize the Express application
 const app = express();
 // Get a port from .env - We use || to provide a default value
 const PORT = process.env.PORT || 4040;
+
+mongoose.connect(process.env.MONGODB);
+const db = mongoose.connection;
+
+db.on("error", console.error.bind(console, "Connection Error:"));
+db.once(
+  "open",
+  console.log.bind(console, "Successfully opened connection to Mongo!")
+);
 
 // =======================
 // HERE GOES MIDDLEWARE
@@ -18,6 +38,9 @@ const logging = (request, response, next) => {
 // tell the app to use the middleware
 app.use(express.json());
 app.use(logging);
+
+// Use Routers
+app.use("/pizzas", pizzas);
 
 // Handle the request with HTTP GET method
 //  from http://localhost:4040/status

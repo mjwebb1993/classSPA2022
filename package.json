@@ -27,6 +27,7 @@
     "express": "^4.17.3",
     "html-literal": "^1.1.0",
     "lodash": "^4.17.21",
+    "mongoose": "^6.2.7",
     "navigo": "^8.11.1",
     "node": "^16.13.1",
     "yargs-parser": ">=13.1.2"
