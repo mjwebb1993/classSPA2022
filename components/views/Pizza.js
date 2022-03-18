@@ -7,7 +7,6 @@ export default st => html`
       <th>Cheese</th>
       <th>Sauce</th>
       <th>Toppings</th>
-      <th>Customer</th>
     </tr>
     ${st.pizzas
       .map(pizza => {
@@ -16,7 +15,6 @@ export default st => html`
         <td>${pizza.cheese}</td>
         <td>${pizza.sauce}</td>
         <td>${pizza.toppings.join(" & ")}</td>
-        <td>${pizza.customer}</td>
         </tr>`;
       })
       .join("")}
