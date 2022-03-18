@@ -29,7 +29,7 @@ function render(st) {
 
   router.updatePageLinks();
 
-  addEventListeners();
+  addEventListeners(st);
 }
 
 function addEventListeners(st) {
