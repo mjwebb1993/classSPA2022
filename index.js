@@ -70,7 +70,7 @@ function addEventListeners(st) {
       };
 
       axios
-        .post(`${PIZZA_PLACE_API_URL}/pizzad`, requestData)
+        .post(`${PIZZA_PLACE_API_URL}`, requestData)
         .then(response => {
           state.Pizza.pizzas.push(response.data);
           router.navigate("/Pizza");
