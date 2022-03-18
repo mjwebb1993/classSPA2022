@@ -146,11 +146,11 @@ function fetchDataByView(done, st = state.Home) {
 //  ADD ROUTER HOOKS HERE ...
 router.hooks({
   before: (done, params) => {
-    // Because not all routes pass params we have to guard against is being undefined
     const page =
-      params && params.data && params.data.hasOwnProperty("view")
-        ? capitalize(params.data.view)
+      params && params.data && params.data.page
+        ? capitalize(params.data.page)
         : "Home";
+
     console.log("matsinet-state[page]:", state[page]);
 
     fetchDataByView(done, state[page]);
