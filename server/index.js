@@ -49,7 +49,7 @@ const cors = (req, res, next) => {
   next();
 };
 // tell the app to use the middleware
-app.use(express.json());
+app.use(bodyParser.json());
 app.use(cors);
 app.use(logging);
 
