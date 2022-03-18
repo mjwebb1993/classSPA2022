@@ -19,7 +19,7 @@ if (process.env.PIZZA_PLACE_API_URL) {
 }
 const router = new Navigo("/");
 
-function render(st) {
+function render(st = state.Home) {
   document.querySelector("#root").innerHTML = `
     ${Header(st)}
     ${Nav(state.Links)}
@@ -29,27 +29,43 @@ function render(st) {
 
   router.updatePageLinks();
 
-  addEventListeners(st);
+  addEventListenersByView(st);
 }
 
-function addEventListeners(st) {
+function addEventListenersByView(st) {
+  // Add to every view
   // add event listeners to Nav items for navigation
-  /**
-   * This event listener conflicts with the "data-navigo" attribute in Nav.js component
-   */
-  // document.querySelectorAll("nav a").forEach((navLink) =>
-  //   navLink.addEventListener("click", (event) => {
-  //     event.preventDefault();
-  //     render(state[event.target.title]);
-  //   })
-  // );
-
+  document.querySelectorAll("nav a").forEach(navLink =>
+    navLink.addEventListener("click", event => {
+      event.preventDefault();
+      render(state[event.target.title]);
+    })
+  );
   // add menu toggle to bars icon in nav bar
   document
     .querySelector(".fa-bars")
     .addEventListener("click", () =>
       document.querySelector("nav > ul").classList.toggle("hidden--mobile")
     );
+
+  // Add event listeners for the Form view
+  if (st.view === "Form") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+      // convert HTML elements to Array
+      let inputList = Array.from(event.target.elements);
+      // remove submit button from list
+      inputList.pop();
+      // construct new picture object
+      let newPic = inputList.reduce((pictureObject, input) => {
+        pictureObject[input.name] = input.value;
+        return pictureObject;
+      }, {});
+      // add new picture to state.Gallery.pictures
+      state.Gallery.pictures.push(newPic);
+      render(state.Gallery);
+    });
+  }
   if (st.view === "Order") {
     document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();
@@ -82,18 +98,35 @@ function addEventListeners(st) {
   }
 }
 
-//  ADD ROUTER HOOKS HERE ...
-router.hooks({
-  before: (done, params) => {
-    const page =
-      params && params.data && params.data.page
-        ? capitalize(params.data.page)
-        : "Home";
-
-    if (page === "Home") {
+function fetchDataByView(done, st = state.Home) {
+  console.log("matsinet-st.view:", st.view);
+  switch (st.view) {
+    case "Pizza":
+      axios
+        .get(`${PIZZA_PLACE_API_URL}/pizzas`)
+        .then(response => {
+          state[st.view].pizzas = response.data;
+          render(st);
+          done();
+        })
+        .catch(error => {
+          console.log("It puked", error);
+          done();
+        });
+      break;
+    case "Blog":
+      state.Blog.posts = [];
+      axios.get("https://jsonplaceholder.typicode.com/posts").then(response => {
+        response.data.forEach(post => {
+          state.Blog.posts.push(post);
+          done();
+        });
+      });
+      break;
+    case "Home":
       axios
         .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=st.%20louis&appid=${process.env.OPEN_WEATHER_MAP_API_KEY}`
+          `https://api.openweathermap.org/data/2.5/weather?appid=fbb30b5d6cf8e164ed522e5082b49064&q=st.%20louis`
         )
         .then(response => {
           state.Home.weather = {};
@@ -104,20 +137,23 @@ router.hooks({
           done();
         })
         .catch(err => console.log(err));
-    } else if (page === "Pizza") {
-      axios
-        .get(`${process.env.PIZZA_PLACE_API_URL}`)
-        .then(response => {
-          console.log(response.data);
-          state.Pizza.pizzas = response.data;
-          done();
-        })
-        .catch(error => {
-          console.log("It puked", error);
-        });
-    } else {
+      break;
+    default:
       done();
-    }
+  }
+}
+
+//  ADD ROUTER HOOKS HERE ...
+router.hooks({
+  before: (done, params) => {
+    // Because not all routes pass params we have to guard against is being undefined
+    const page =
+      params && params.data && params.data.hasOwnProperty("view")
+        ? capitalize(params.data.view)
+        : "Home";
+    console.log("matsinet-state[page]:", state[page]);
+
+    fetchDataByView(done, state[page]);
   }
 });
 
