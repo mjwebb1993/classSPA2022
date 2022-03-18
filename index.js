@@ -46,14 +46,17 @@ function addEventListeners(st) {
 //  ADD ROUTER HOOKS HERE ...
 router.hooks({
   before: (done, params) => {
-    const page = params && params.data && params.data.page ? capitalize(params.data.page) : "Home";
+    const page =
+      params && params.data && params.data.page
+        ? capitalize(params.data.page)
+        : "Home";
 
     if (page === "Home") {
       axios
         .get(
           `https://api.openweathermap.org/data/2.5/weather?q=st.%20louis&appid=${process.env.OPEN_WEATHER_MAP_API_KEY}`
         )
-        .then((response) => {
+        .then(response => {
           state.Home.weather = {};
           state.Home.weather.city = response.data.name;
           state.Home.weather.temp = response.data.main.temp;
@@ -61,16 +64,16 @@ router.hooks({
           state.Home.weather.description = response.data.weather[0].main;
           done();
         })
-        .catch((err) => console.log(err));
+        .catch(err => console.log(err));
     } else if (page === "Pizza") {
       axios
         .get(`${process.env.PIZZA_PLACE_API_URL}`)
-        .then((response) => {
+        .then(response => {
           console.log(response.data);
           state.Pizza.pizzas = response.data;
           done();
         })
-        .catch((error) => {
+        .catch(error => {
           console.log("It puked", error);
         });
     } else {
@@ -82,9 +85,9 @@ router.hooks({
 router
   .on({
     "/": () => render(state.Home),
-    ":page": (params) => {
+    ":page": params => {
       let page = capitalize(params.data.page);
       render(state[page]);
-    },
+    }
   })
   .resolve();

@@ -1,9 +1,9 @@
 import html from "html-literal";
 
-const kelvinToFahrenheit = (kelvinTemp) =>
+const kelvinToFahrenheit = kelvinTemp =>
   Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
 
-export default (st) => html`
+export default st => html`
   <section id="jumbotron">
     <h2>SavvyCoders JavaScript Fullstack Bootcamp</h2>
     <a href="" onClick="alert('Hello! You clicked the Button!')"

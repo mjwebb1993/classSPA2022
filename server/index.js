@@ -8,7 +8,6 @@ const dotenv = require("dotenv");
 // Require models
 const pizzas = require("./routers/pizzas");
 
-
 dotenv.config();
 
 // Initialize the Express application
