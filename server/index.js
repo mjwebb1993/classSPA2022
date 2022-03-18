@@ -4,9 +4,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 // Require dotenv to load environment variables
 const dotenv = require("dotenv");
+const bodyParser = require("body-parser");
 
 // Require models
 const pizzas = require("./routers/pizzas");
+const orders = require("./routers/orders");
 
 dotenv.config();
 
@@ -33,14 +35,27 @@ const logging = (request, response, next) => {
   console.log(`${request.method} ${request.url} ${Date.now()}`);
   next();
 };
-
+const cors = (req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type, Accept,Authorization,Origin"
+  );
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+  );
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  next();
+};
 // tell the app to use the middleware
 app.use(express.json());
+app.use(cors);
 app.use(logging);
 
 // Use Routers
 app.use("/pizzas", pizzas);
-
+app.use("/orders", orders);
 // Handle the request with HTTP GET method
 //  from http://localhost:4040/status
 app.get("/status", (request, response) => {

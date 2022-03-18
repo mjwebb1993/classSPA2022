@@ -7,7 +7,16 @@ import axios from "axios";
 
 import dotenv from "dotenv";
 dotenv.config();
+let PIZZA_PLACE_API_URL;
 
+if (process.env.PIZZA_PLACE_API_URL) {
+  PIZZA_PLACE_API_URL =
+    process.env.PIZZA_PLACE_API_URL || "http://localhost:4040";
+} else {
+  console.error(
+    "Please create the .env file with a value for PIZZA_PLACE_API_URL"
+  );
+}
 const router = new Navigo("/");
 
 function render(st) {
@@ -41,6 +50,36 @@ function addEventListeners(st) {
     .addEventListener("click", () =>
       document.querySelector("nav > ul").classList.toggle("hidden--mobile")
     );
+  if (st.view === "Order") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+      const inputList = event.target.elements;
+
+      const toppings = [];
+      for (let input of inputList.toppings) {
+        if (input.checked) {
+          toppings.push(input.value);
+        }
+      }
+
+      const requestData = {
+        crust: inputList.crust.value,
+        cheese: inputList.cheese.value,
+        sauce: inputList.sauce.value,
+        toppings: toppings
+      };
+
+      axios
+        .post(`${PIZZA_PLACE_API_URL}/pizzas`, requestData)
+        .then(response => {
+          state.Pizza.pizzas.push(response.data);
+          router.navigate("/Pizza");
+        })
+        .catch(error => {
+          console.log("It puked", error);
+        });
+    });
+  }
 }
 
 //  ADD ROUTER HOOKS HERE ...

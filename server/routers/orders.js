@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 const express = require("express");
 const router = express.Router();
 const Order = require("../models/order");
@@ -103,7 +104,7 @@ router.put("/:id", (request, response) => {
         );
       });
 
-      return error ? response.sendStatus(500).json(error) : res.json(data);
+      return error ? response.sendStatus(500).json(error) : response.json(data);
     }
   );
 });
