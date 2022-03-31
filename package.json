@@ -6,7 +6,8 @@
     "parcel-build": "parcel build index.html && cp _redirects ./dist/",
     "serve": "parcel index.html",
     "server:watch": "nodemon --watch ./server -e js ./server/index.js",
-    "start": "node ./server/index.js"
+    "start": "node ./server/index.js",
+    "test": "npx jasmine-node spec"
   },
   "keywords": [],
   "author": "",
